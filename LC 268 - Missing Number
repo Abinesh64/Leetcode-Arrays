@@ -58,3 +58,25 @@ int missingNumber(int* nums, int numsSize){
     }
     return res^numsSize;
 }
+
+
+
+#Sol 5 : with time complexity O(n^2) int C lang
+
+int missingNumber(int* nums, int numsSize){
+    for(int i=0;i<=numsSize;i++)
+    {
+        int count=0;
+        for(int j=0;j<numsSize;j++)
+        {
+            if(nums[j]==i)
+            {
+                count = 1;
+                break;
+            }
+        }
+        if (count == 0)
+        return i;
+    }    
+    return 0;
+}
