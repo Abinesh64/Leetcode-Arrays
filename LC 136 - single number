@@ -25,7 +25,7 @@ public:
 };
 
 
-#Sol 3:single number in an array(with time complexity O(n^2))
+#Sol 3 : Single number in an array(with time complexity O(n^2))
 
 int singleNumber(int* nums, int numsSize){
         for(int i=0;i<numsSize;i++)
@@ -45,26 +45,20 @@ int singleNumber(int* nums, int numsSize){
 
 #Sol 4:Single number using unordered map in C++
 
-#include <iostream>
-#include<vector>
-#include<unordered_map>
-using namespace std;
-int singleNumber(vector<int>& nums) {
+class Solution {
+public:
+    int singleNumber(vector<int>& nums) {
         unordered_map<int,int> m;
         for(auto i:nums)
         m[i]=m[i]+1;
         for(auto i:m)
+        {
         if(i.second==1)
         return i.first;
-}       
-int main()
-{
-    vector<int> vect={1,2,3,2,1};
-    int abc = singleNumber(vect);
-    cout<<abc;
-    return 0;
-}
-
+        }
+        return 0;
+    }
+};
 
 
 
