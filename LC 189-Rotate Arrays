@@ -1,4 +1,4 @@
-//Rotating Array without space complexity.
+//Rotating Array without space complexity(using pre-defined reverse function)
 
 class Solution {
 public:
