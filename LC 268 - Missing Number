@@ -1,0 +1,60 @@
+#Sol 1 : using Sorting in c++ . SC : O(Nlog(N)) 
+
+class Solution {
+public:
+    int missingNumber(vector<int>& nums) {
+        sort(nums.begin(),nums.end());
+        int numsSize=nums.size();
+        int i;
+        for(i=0;i<numsSize;i++)
+        {
+        if(nums[i]!=i)
+        return i;
+        } 
+        return i;
+    }
+};
+
+
+#Sol 2 : Using unordered map in C++
+
+class Solution {
+public:
+    int missingNumber(vector<int>& nums) {
+        unordered_map<int ,int> m;
+        for (auto i:nums)
+        m[i]=1;
+        int n=nums.size();
+        int i;
+        for(i=0;i<n;i++)
+        {
+            if(m[i]==0)
+            return i;
+        }
+        return i;
+    }
+};
+
+
+#Sol 3 : using simple maths formula (finding the sum of the numbers from 0 to n) - C lang
+
+int missingNumber(int* nums, int numsSize){
+    int num=0;
+    for(int i=0;i<numsSize;i++)
+    {
+        num+=nums[i];
+    }
+    return ((numsSize*(numsSize+1)/2) - num);
+}
+
+
+#Sol 4 : Using Ex-OR operation (C lang)
+
+int missingNumber(int* nums, int numsSize){
+    int res=0;
+    for(int i=0;i<numsSize;i++)
+    {
+        res=res^nums[i]^i;
+    }
+    return res^numsSize;
+}
