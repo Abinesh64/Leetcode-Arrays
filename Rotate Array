@@ -9,6 +9,7 @@ a[e]=t;
 ++s;
 --e;
 }
+
 void rotate(int *a,int n,int k)
 {
 k=k%n;
