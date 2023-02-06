@@ -19,3 +19,26 @@ public:
         return answer;
     }
 };
+
+SOL 2 : Using recursion
+class Solution {
+public:
+    vector<int> separateDigits(vector<int>& nums) {
+        vector<int> v;
+        for(int i=0;i<nums.size();i++)
+        {
+            digit(v,nums[i]);
+        }
+    return v;
+    }
+    void digit(vector<int>& v,int x)
+    {
+        if(x==0)
+        return ;
+        int a=x%10;
+        x=x/10;
+        digit(v,x);
+        v.push_back(a);
+    }
+    
+};
