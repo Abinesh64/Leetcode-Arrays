@@ -1,0 +1,15 @@
+class Solution {
+public:
+    void sortColors(vector<int>& nums) {
+        int zc=0,oc=0,tc=0;
+        for(auto i:nums)
+        {
+            if(i==0) zc++;
+            else if(i==1) oc++;
+            else tc++;
+        }
+        for(int i=0;i<zc;i++) nums[i]=0;
+        for(int i=zc;i<zc+oc;i++) nums[i]=1;        
+        for(int i=zc+oc;i<nums.size();i++) nums[i]=2;
+    }
+};
