@@ -1,0 +1,15 @@
+class Solution {
+public:
+    vector<int> singleNumber(vector<int>& nums) {
+        vector<int>v;
+        unordered_map<int,int>m;
+        for(auto i:nums)
+        m[i]=m[i]+1;
+        for(auto i:m)
+        {
+           if(i.second==1)
+           v.push_back(i.first);
+        }
+        return v;
+    }
+};
