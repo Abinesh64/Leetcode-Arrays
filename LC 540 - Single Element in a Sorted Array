@@ -1,0 +1,33 @@
+Sol 1: With O(n) Time Complexity
+
+class Solution {
+public:
+    int singleNonDuplicate(vector<int>& nums) {
+        int i=0,j=1;
+        if(nums.size()==1) return nums[0];
+        while(j<nums.size())
+            {
+               if(nums[i]==nums[j]) 
+               {
+                   i+=2;
+                   j+=2;
+                   if(j==nums.size()) return nums[j-1];
+               }
+                else return nums[i];
+            }
+        return 0;
+    }
+};
+
+SOL 2: Using unordered_map
+
+class Solution {
+public:
+    int singleNonDuplicate(vector<int>& nums) {
+        unordered_map<int,int>m;
+        for(auto i:nums)   m[i]=m[i]+1;
+        for(auto j:m)
+            if(j.second==1) return j.first;
+        return 0;
+    }
+};
